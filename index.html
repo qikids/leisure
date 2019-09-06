@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>小兔子动画</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;border:0;}
+		body{overflow: hidden;}
+		:root{
+			--s1:rgb(196,228,253);
+			--g1:rgb(148,190,89);
+		}
+		/*天空样式*/
+		.sky{
+			width: 100%;
+			height: 60vh;
+		    background: linear-gradient(180deg,var(--s1) 0%,#fff 100%);
+		    position: relative;
+		}
+		/*白云样式*/
+		.cloud{
+			width: 86px;
+			height:86px;
+	    	background: #fff;
+	    	border-radius: 50%;
+	    	position: absolute;
+	    }
+	    .cloud:before{
+	    	content: "";
+    		width: 142px;
+    		height: 50px;
+    		background: #fff;
+    		border-radius: 74px/25px 25px 25px 25px;
+    		position: absolute;
+    		left: -43px;
+    		top: 32px
+	    }
+	    .cloud:after{
+	    	content: "";
+    		width: 76px;
+    		height: 42px;
+    		background: #fff;
+    		border-radius: 45px/42px 0px 42px 27px;
+    		position: absolute;
+    		left: -34px;
+    		top: 31px;
+    		transform:rotate(69deg);
+
+	    }
+	    .cloud.one{
+	    	transform: scale(1);
+	    	right:-129px;
+	    	top: 35px;
+	    	animation: one 10s linear infinite;
+	    }
+	    .cloud.two{   
+	     	transform: scale(.8);
+    		right:-112px;
+    		top: -17px;
+    		opacity: .8;
+    		animation: two 14s linear infinite;
+    	}
+	    .cloud.three{   
+	     	transform: scale(.8);
+    		right:-112px;
+    		top: 100px;
+    		opacity: .8;
+    		animation: three 16s linear infinite;
+    	}
+	    .cloud.four{    
+	    	transform: scale(.7);
+    		right: -103px;
+    		top: -11px;
+    		opacity: .8;
+    		animation: four 12s linear infinite;
+    	}
+	    .cloud.five{    
+	    	transform: scale(.6);
+    		right: -94px;
+    		top: 74px;
+    		opacity: .5;
+    		animation: five 20s linear infinite;
+    	}
+    	/*草地样式*/
+		.grassland{
+			width: 100%;
+			height: 40vh;
+			background: linear-gradient(0deg,var(--g1) 0%,#fff 100%);
+		}
+		/*图片样式*/
+		.grassland img{
+			position: absolute;
+			bottom: 50px;
+			right: 200px;
+		}
+		/*设置动画*/
+		@keyframes one{
+			from{transform: translate(0px,0) scale(1);}
+			to{transform: translate(-2000px,0) scale(1);}
+		}
+		@keyframes two{
+			from{transform: translate(0px,0) scale(.8);opacity: .8;}
+			to{transform: translate(-2000px,0) scale(.8);opacity: .8;}
+		}
+		@keyframes three{
+			from{transform: translate(0px,0) scale(.8);opacity: .8;}
+			to{transform: translate(-2000px,0) scale(.8);opacity: .8;}
+		}
+		@keyframes four{
+			from{transform: translate(0px,0) scale(.7);opacity: .8;}
+			to{transform: translate(-2000px,0) scale(.7);opacity: .8;}
+		}
+		@keyframes five{
+			from{transform: translate(0px,0) scale(.6);opacity: .5;}
+			to{transform: translate(-2000px,0) scale(.6);opacity: .5;}
+		}
+	</style>
+</head>
+<body>
+	<!-- 蓝天 -->
+	<div class="sky">
+		<div class="cloud one"></div>
+		<div class="cloud two"></div>
+		<div class="cloud three"></div>
+		<div class="cloud four"></div>
+		<div class="cloud five"></div>
+	</div>
+	<!-- 草地 -->
+	<div class="grassland"><img src="img/rabbit.png" width="250px" height="250px"></div>
+</body>
+</html>
